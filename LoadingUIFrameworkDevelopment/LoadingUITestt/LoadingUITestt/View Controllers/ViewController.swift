@@ -19,7 +19,21 @@ class ViewController: UIViewController {
 	@IBAction func loadingUIButton(_ sender: UIBarButtonItem) {
 		print("uiTest")
 		
+		let loadingVC = LoadingViewController()
+		present(loadingVC, animated: true) {
+			loadingVC.start()
+		}
+		
+		
+		DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+			loadingVC.stop()
+		}
+		
 	}
+	
+	
+	
+	
 	
 }
 
